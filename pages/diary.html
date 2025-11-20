@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Учебный дневник — Никита</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo" aria-label="Логотип">ЛОГОТИП</a>
+        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="projects.html">Проекты</a></li>
+            <li><a class="active" href="diary.html">Дневник</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="diary container" aria-labelledby="diary-title">
+        <div class="diary-header">
+          <h1 id="diary-title">Мой учебный прогресс</h1>
+          <button class="btn" id="addDemoEntryBtn" type="button">Добавить запись</button>
+        </div>
+
+        <div class="timeline" id="entryList" aria-live="polite">
+          <!-- JS отрендерит записи -->
+        </div>
+
+        <div class="courses">
+          <h2>Текущие курсы</h2>
+          <ul class="skills-list">
+            <li class="skill">
+              <div class="skill-header">
+                <span>Веб‑разработка</span>
+                <span>90%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" data-percent="90"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <div class="skill-header">
+                <span>JavaScript</span>
+                <span>70%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" data-percent="70"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <div class="skill-header">
+                <span>React</span>
+                <span>50%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" data-percent="50"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="diary-form">
+          <h2>Добавить запись</h2>
+          <form id="addEntryForm">
+            <div class="form-grid">
+              <label>
+                <span>Дата</span>
+                <input type="date" id="dateInput" required />
+              </label>
+              <label>
+                <span>Тема</span>
+                <input type="text" id="titleInput" placeholder="Например: Верстка макета" required />
+              </label>
+              <label>
+                <span>Статус</span>
+                <select id="statusSelect">
+                  <option value="done">Выполнено</option>
+                  <option value="progress">В процессе</option>
+                </select>
+              </label>
+            </div>
+            <label class="full">
+              <span>Описание</span>
+              <textarea id="descInput" rows="3" placeholder="Кратко о проделанной работе..."></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Сохранить</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Контакты • <a href="contacts.html">Написать мне</a></p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

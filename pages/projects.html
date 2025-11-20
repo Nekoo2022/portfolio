@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мои проекты — Никита</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo" aria-label="Логотип">ЛОГОТИП</a>
+        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a class="active" href="projects.html">Проекты</a></li>
+            <li><a href="diary.html">Дневник</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="projects-header">
+            <h1 id="projects-title">Мои проекты</h1>
+            <div class="filters" role="tablist" aria-label="Фильтр проектов по технологиям">
+              <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Все</button>
+              <button class="filter-btn" data-filter="html" role="tab" aria-selected="false">HTML/CSS</button>
+              <button class="filter-btn" data-filter="js" role="tab" aria-selected="false">JavaScript</button>
+              <button class="filter-btn" data-filter="react" role="tab" aria-selected="false">React</button>
+              <button class="filter-btn" data-filter="bootstrap" role="tab" aria-selected="false">Bootstrap</button>
+            </div>
+          </div>
+
+          <div class="project-grid" id="projectGrid">
+            <article class="project-card" data-id="p1" data-tags="html,css,js" tabindex="0">
+              <a href="#" class="project-thumb open-project" aria-label="Тренажёр заданий ЕГЭ" data-id="p1">
+                <img src="/images/project-1.png" alt="Тренажёр заданий ЕГЭ" loading="lazy" />
+              </a>
+              <div class="project-body">
+                <h3><a href="#" class="open-project" data-id="p1">Тренажёр заданий ЕГЭ</a></h3>
+                <p>
+                  Интерактивный тренажёр по решению заданий ЕГЭ: генерация вариантов, мгновенная проверка ответов, подсказки и
+                  статистика прогресса.
+                </p>
+                <div class="tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-id="p2" data-tags="react,js" tabindex="0">
+              <a href="#" class="project-thumb open-project" aria-label="Копия Twitch" data-id="p2">
+                <img src="/images/project-2.png" alt="Копия Twitch" loading="lazy" />
+              </a>
+              <div class="project-body">
+                <h3><a href="#" class="open-project" data-id="p2">Копия Twitch</a></h3>
+                <p>
+                  Интерфейс стриминговой платформы: страницы каналов, лента трансляций, поиск и подписки. Упор на адаптивный UI и
+                  навигацию.
+                </p>
+                <div class="tags">
+                  <span class="tag">React</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-id="p3" data-tags="react" tabindex="0">
+              <a href="#" class="project-thumb open-project" aria-label="Сайт заказа пиццы" data-id="p3">
+                <img src="/images/project-3.png" alt="Сайт заказа пиццы" loading="lazy" />
+              </a>
+              <div class="project-body">
+                <h3><a href="#" class="open-project" data-id="p3">Сайт заказа пиццы</a></h3>
+                <p>
+                  Выбор размеров и теста, настройка ингредиентов, корзина и оформление заказа. Чистая архитектура компонентов и
+                  управление состоянием.
+                </p>
+                <div class="tags">
+                  <span class="tag">React</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Контакты • <a href="contacts.html">Написать мне</a></p>
+      </div>
+    </footer>
+
+    <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-content" role="document">
+        <button class="modal-close" aria-label="Закрыть" data-close>×</button>
+        <div class="modal-header">
+          <h2 id="modalTitle"></h2>
+          <div class="tags" id="modalTags"></div>
+        </div>
+        <div class="modal-body">
+          <p id="modalDesc"></p>
+          <div class="modal-gallery" id="modalGallery"></div>
+        </div>
+        <div class="modal-footer">
+          <a id="modalLive" class="btn" href="#" target="_blank" rel="noopener">Живая версия</a>
+          <a id="modalSource" class="btn" href="#" target="_blank" rel="noopener">Исходный код</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/filters.js"></script>
+    <script src="../js/modal.js"></script>
+  </body>
+</html>
